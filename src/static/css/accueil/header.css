@@ -1,0 +1,16 @@
+
+
+.globalconteneur {
+    border-bottom: 1px solid #5c5d5e; /* Changez la couleur et l'épaisseur selon vos besoins */
+}
+
+.footerconteneur{
+    border-top: 1px solid #5c5d5e; /* Changez la couleur et l'épaisseur selon vos besoins */
+}
+
+body {
+    height: 100%;
+}
+
+
+

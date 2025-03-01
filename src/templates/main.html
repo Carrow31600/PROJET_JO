@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paris 2024</title>
+    <link rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{%static 'css/accueil/header.css'%}">
+
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+{% comment %} DEBUT HEADER {% endcomment %}
+<header>
+  <img class = 'img-header' src="{%static 'images/fondheader.svg'%}" alt="image de fond">
+  <div class = 'conteneur-fluid d-flex flex-column bg-light globalconteneur'>
+    <div class = "row bg-light">
+      <div class = 'col bg-info text-center '>
+        <div class = 'row bg-light'>
+          {% comment %} DEBUT NAVBAR {% endcomment %}
+          <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link text-light" aria-current="page" href={% url "accueil" %}>Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "sites" %}>Sites</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "sports" %}>Sports</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "offers" %}>Offres</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "events" %}>Epreuves</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "basket" %}>Panier</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-light" href={% url "login" %}>Connexion</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Accès Staff
+                    </a>
+                    <ul class="dropdown-menu bg-light">
+                      <li><a class="dropdown-item" href="#">Controle tickets</a></li>
+                      <li><a class="dropdown-item" href="#">Tableau de bord</a></li>
+                      <li><a class="dropdown-item" href="#">Interface Admin</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% comment %} FIN NAVBAR {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% comment %} FIN HEADER {% endcomment %}
+
+
+
+{% comment %} DEBUT CORPS {% endcomment %}
+<div class="flex-grow-1">
+  <div class="container">
+    {% block content %}
+    {% endblock  %}
+  </div>
+</div>
+{% comment %} FIN CORPS {% endcomment %}
+
+{% comment %} DEBUT FOOTER {% endcomment %}
+
+  <footer class = 'footerconteneur bg-dark'>
+    <ul class="nav justify-content-center ">
+      <li class="nav-item  ">
+        <a class="nav-link text-light" href={% url "cookies" %}>Cookies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light " href={% url "donnees" %}>Protection des données</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href={% url "contact" %}>Nous contacter</a>
+      </li>
+    </ul>
+  </footer>
+{% comment %} FIN FOOTER {% endcomment %}
+
+
+{% comment %} SCRIPTS {% endcomment %}
+<script src = {% static "js/bootstrap.bundle.min.js" %}></script>
+<script src = {% static "js/jquery.min.js" %}></script>
+<script src = {% static "js/popper.min.js" %}></script>
+
+</body>
+</html>
